@@ -1,5 +1,6 @@
 # Disaster-Pipeline
-Disaster Response Pipeline Project 1. Installation  I use python 3.5 to create this project and the main libraries I used are:      
+Disaster Response Pipeline Project 1. Installation  
+I use python 3.5 to create this project and the main libraries I used are:      
 sikit-learn ==0.19.1     
 nltk == 3.2.5     
 Flask==1.0.2     
