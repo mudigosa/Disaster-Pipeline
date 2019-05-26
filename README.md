@@ -23,11 +23,6 @@ I create a machine learning pipeline to categorize these events so that I can se
         README.md
         ETL disaster Pipeline Preparation.ipynb
         ML disaster Pipeline Preparation.ipynb
-    \app
-        run.py
-        \templates
-            go.html
-            master.html
     \data
         DisasterResponse.db
         disaster_categories.csv
@@ -49,11 +44,9 @@ I create a machine learning pipeline to categorize these events so that I can se
  2. Run the following command in the app's directory to run your web app.
      `python run.py`
 
- 3. Go to http://0.0.0.0:3001/
-
 5. GitHub link:
 
-    https://github.com/mudigosa/DSND-Disaster-Response-Pipelines
+    https://github.com/mudigosa/Disaster-Response-Pipelines
 
 6. Licensing, Author, Acknowledgements
 
