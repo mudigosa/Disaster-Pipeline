@@ -12,8 +12,6 @@ I use python 3.5 to create this project and the main libraries I used are:
 Please check detailed version information in requirement.txt.
 2. Project Motivation
 
-Project code is deployed a program as a web application in the internet. The web application Programming is a project in Udacity Data Scientist Nanodegree program. In this project, I analyze disaster data from Figure Eight to build a model for an API that classifies disaster messages. I find a data set containing real messages that were sent during disaster events.
-
 I create a machine learning pipeline to categorize these events so that I can send the messages to an appropriate disaster relief agency. I split the data into a training set and a test set. Then,I create a machine learning pipeline that uses NLTK, as well as scikit-learn's Pipeline and GridSearchCV to output a final model. Finally, I export the model to a pickle file.
 
  The web app also displays visualizations of the data as follows: disaster graph1
@@ -24,10 +22,8 @@ I create a machine learning pipeline to categorize these events so that I can se
         ETL disaster Pipeline Preparation.ipynb
         ML disaster Pipeline Preparation.ipynb
     \data
-        DisasterResponse.db
         disaster_categories.csv
         disaster_messages.csv
-        process_data.py
     \models
         classifier.pkl : It is too big(about 2GB size) to be included in the github. To run ML pipeline that trains classifier and saves the trained model to classifier.pkl
         train_classifier.py
