@@ -74,16 +74,12 @@ def build_model(X_train, Y_train,X_test,categories):
             ])
     pipeline.fit(X_train, Y_train)
     Y_pred = pipeline.predict(X_test)
+    accuracy = accuracy_score(Y_test.values, Y_pred.values)    
     for i in range(len(categories)):
-        print("Category:", categories[i],"\n", classification_report(Y_test.iloc[:, i].values, Y_pred[:, i]))
-        print('Accuracy of %25s: %.2f' %(categories[i], accuracy_score(Y_test.iloc[:, i].values, Y_pred[:,i])))
-    
-    # Calculate the accuracy for each of them.
+        print('Accuracy of %25s: %.2f' %(categories[i], accuracy))
 
 def main():
         X, Y,categories = load_data()
-        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
-
         X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
         X_train = X_train.astype(str)
         Y_train = Y_train.astype(str)
