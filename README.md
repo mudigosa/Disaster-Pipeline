@@ -25,15 +25,14 @@ I create a machine learning pipeline to categorize these events so that I can se
         disaster_categories.csv
         disaster_messages.csv
     \models
-        classifier.pkl : It is too big(about 2GB size) to be included in the github. To run ML pipeline that trains classifier and saves the trained model to classifier.pkl
-        train_classifier.py
+        classifier.pkl : It is too big(about 2GB size) to be included in the github. To run ML pipeline that trains classifier and saves the trained model to MachineLearningPipeline.py
 
 4.Instructions:
 
  1. Run the following commands in the project's root directory to set up your database and model.
 
      - To run ETL pipeline that cleans data and stores in database
-         `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+         `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterMessages.db`
      - To run ML pipeline that trains classifier and saves
          `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
