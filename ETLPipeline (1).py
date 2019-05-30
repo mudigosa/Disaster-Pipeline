@@ -25,7 +25,7 @@ def clean_data(df):
     output:
         df: Dataset after cleaning.
     '''
-    disastercategories = df.disastercategories.str.split(';', expand = True)
+    disastercategories = df.categories.str.split(';', expand = True)
     # select the first row of the categories dataframe
     row = disastercategories.iloc[0,:]
 
@@ -53,23 +53,14 @@ def clean_data(df):
     df.drop_duplicates(subset = 'id', inplace = True)
     return df
 
-def save_data(df, database_filepath):
-    engine = create_engine('sqlite:///DisasterResponse.db')
+def save_data(df):
+    engine = create_engine('sqlite:///disastermessages.db')
     df.to_sql('df', engine, index=False)
 
 def main():
-    if len(sys.argv) == 4:
-
-        messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
-
-        print('Loading data...\n    MESSAGES: {}\n    CATEGORIES: {}'
-              .format(messages_filepath, categories_filepath))
-        df = load_data(messages_filepath, categories_filepath)
-
+        df = load_data()
         print('Cleaning data...')
         df = clean_data(df)
-
-        print('Saving data...\n    DATABASE: {}'.format(database_filepath))
         save_data(df)
 
         print('Cleaned data saved to database!')
