@@ -36,6 +36,9 @@ def load_data():
         categories = list(Y)
         print(categories)
         display (Y.head (n=3))
+        fig = plt.figure(figsize = (15,20))
+        ax = fig.gca()
+        Y.hist(ax = ax) 
         return X,Y,categories 
 
 def tokenize(text):
@@ -47,6 +50,10 @@ def tokenize(text):
         lemmed: Tokenized, cleaned, and lemmatized text
     '''
     # Normalize Text
+    url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+    detected_urls = re.findall(url_regex, text)
+    for url in detected_urls:
+        text = text.replace(url, "urlplaceholder")
     tokens = word_tokenize(text)
     wl = WordNetLemmatizer()
     # converting to lower case and lemmatize each token
