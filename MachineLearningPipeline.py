@@ -50,6 +50,7 @@ def tokenize(text):
         lemmed: Tokenized, cleaned, and lemmatized text
     '''
     # Normalize Text
+    STOPWORDS = list(set(stopwords.words('english')))    
     url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     detected_urls = re.findall(url_regex, text)
     for url in detected_urls:
@@ -58,6 +59,7 @@ def tokenize(text):
     wl = WordNetLemmatizer()
     # converting to lower case and lemmatize each token
     tokens = [wl.lemmatize(t).lower().strip() for t in tokens]
+    if remove_stop: tokens = [token for token in tokens if token not in STOPWORDS]    
     return tokens
 
     
